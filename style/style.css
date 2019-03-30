@@ -134,8 +134,8 @@ body
 {
 	font-family: Roboto;
 	font-size: 25px;
-	padding-left: 6px;
 	padding-top: 6px;
+	text-align: center;
 }
 #basket
 {
