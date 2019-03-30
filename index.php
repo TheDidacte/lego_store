@@ -38,14 +38,16 @@ else
 
 <div id="hero_zone"><div class="hero_back"></div><div class="catch_phrase">Here you can find any piece you're missing</div></div>
 
-<div id="showcase">
+<div class="separator blue">Recent pieces</div>
+
+<div class="showcase">
 
 
 <?php
 
 
 
-
+for ($k = 0; $k < 1000; $k++)
 foreach ($db[ARTICLE] as $e)
 	echo getArticleElement($e);
  

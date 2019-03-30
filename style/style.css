@@ -24,14 +24,91 @@ body
 	height: 32px;
 	position: absolute;
 	right: 7px;
-	top: 7px;
+	top: 8px;
 	padding-top: 4px;
+}
+#logout:hover
+{
+	box-shadow: 1px 1px black;
+	transform: translate(-1px, -1px);
+}
+.article_price
+{
+	margin-top: 17px !important;
+	background-color: #ff9696;
+	width: 120px;
+	height: 40px;
+	cursor: pointer;
+	color: white;
+	padding-top: 9px;
+	border-radius: 7px;
+	margin: auto;
+}
+.article_hold
+{
+	margin: auto;
+	padding: 30px;
+}
+.showcase
+{
+	display: flex;
+	width: 80vw;
+	margin: 10vw auto;
+	flex-direction: row;
+	flex-wrap: wrap;
+}
+.article_container
+{
+	width: 300px;
+	overflow: hidden;
+	height: 400px;
+	box-shadow: 2px 1px 50px #00000059;
+	text-align: center;
+	font-family: Roboto;
+	font-size: 25px;
+	padding-top: 17px;
+}
+.article_title
+{
+	margin-bottom: 17px;
+}
+.article_preview img
+{
+	max-width: 200px;
+	max-height: 200px;
 }
 #invisible
 {
 	width: 42px;
 	height: 50px;
 }
+.article_preview
+{
+	padding-top: 70px;
+	height: 200px;
+	box-shadow: inset 0px 0px 51px 0px #0000001f;
+}
+#logout::after {
+	content: "";
+	background-color: red;
+	width: 20px;
+	height: 4px;
+	z-index: 1;
+	left: 18px;
+	top: -4px;
+	position: absolute;
+}
+#logout::before {
+	content: "";
+	background-color: red;
+	width: 20px;
+	height: 4px;
+	z-index: 1;
+	left: 85px;
+	top: -4px;
+	position: absolute;
+}
+
 #hero_zone
 {
 	overflow: hidden;
