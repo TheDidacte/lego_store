@@ -1,9 +1,9 @@
 <?php
 	$userdb_path = "./Datas/users.db";
-	$user_tools_path = "./user/tools/";
+	$user_tools_path = "./tools/";
 
 	include_once($user_tools_path."hash.php");
-	include_once("./const.php");
+	include_once("./tools/const.php");
 
 	/* Creating User database */
 	function init_user_db($userdb_path)

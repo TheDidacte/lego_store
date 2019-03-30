@@ -1,7 +1,7 @@
 <?php
-	include_once("./tools/db.php");
-	include_once("./tools/hash.php");
-	include_once("../const.php");
+	include_once("../tools/db.php");
+	include_once("../tools/hash.php");
+	include_once("../tools/const.php");
 	/*
 		register:
 			FALSE: Internal Error

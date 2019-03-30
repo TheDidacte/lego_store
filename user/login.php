@@ -1,7 +1,7 @@
 <?php
-	include_once ("./tools/auth.php");
-	include_once ("./tools/user.php");
-	include_once ("../const.php");
+	include_once ("../tools/auth.php");
+	include_once ("../tools/user.php");
+	include_once ("../tools/const.php");
 
 	/*
 	Return Value:
