@@ -1,4 +1,7 @@
 <?php
+	include_once("../../const.php");
+	include_once("./hash.php");
+
 	function auth($login, $passwd, $passwd_file)
 	{
 		/* Opening password file database */
@@ -10,9 +13,9 @@
 		/* Looking for current user*/
 		foreach ($serial_tab as $key => $value)
 		{
-			if ($value[login] === $login)
+			if ($value[USER_LOGIN] === $login)
 			{
-					if (hash("whirlpool", $passwd) === $value[passwd])
+					if (my_hash($passwd) === $value[USER_PASSWORD])
 						return $value;
 					return FALSE;
 			}

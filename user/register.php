@@ -1,4 +1,7 @@
 <?php
+	include_once("./tools/db.php");
+	include_once("./tools/hash.php");
+	include_once("../const.php");
 	/*
 		register:
 			FALSE: Internal Error
@@ -7,8 +10,6 @@
 	*/
 	function register()
 	{
-		include("./tools/db.php");
-		include("./tools/hash.php");
 		$passwd_file = "../Datas/users.db";
 
 		/* Checking arguments */
@@ -23,12 +24,12 @@
 				return (1);
 
 		$new_user = array();
-		$new_user[user_id] = $serial_tab[count($serial_tab ) - 1][user_id] + 1;
-		$new_user[login] = $_POST[login];
-		$new_user[fname] = $_POST[fname];
-		$new_user[lname] = $_POST[lname];
-		$new_user[passwd] = my_hash($_POST[passwd]);
-		$new_user[mail] = $_POST[mail];
+		$new_user[USER_ID] = $serial_tab[count($serial_tab ) - 1][user_id] + 1;
+		$new_user[USER_LOGIN] = $_POST[USER_LOGIN];
+		$new_user[fname] = $_POST[USER_FNAME];
+		$new_user[lname] = $_POST[USER_LNAME];
+		$new_user[USER_PASSWORD] = my_hash($_POST[USER_PASSWORD]);
+		$new_user[USER_MAIL] = $_POST[USER_MAIL];
 		$new_user[type] = 0;
 
 		return db_add($new_user, $passwd_file);
@@ -36,14 +37,13 @@
 
 	$passwd_file = "../Datas/users.db";
 
-
 	$res = register();
 	if ($res == FALSE)
 		echo "Internal error".PHP_EOL;
 	else if ($res === TRUE)
 	{
 		echo "Registration OK".PHP_EOL;
-		include("./login.php");
+		include_once("./login.php");
 		if (logIn($passwd_file) == 2)
 			echo "Successfully logged in".PHP_EOL;
 		else

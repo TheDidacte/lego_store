@@ -1,4 +1,5 @@
 <?php
+	include_once("../../const.php");
 	/*
 		user_get:
 			False => Internal Error
@@ -15,9 +16,9 @@
 			return (FALSE);
 		foreach($serial_tab as $user)
 		{
-			if ($user[login] != $login)
+			if ($user[USER_LOGIN] != $login)
 				continue ;
-			if ($user[passwd] != $passdw)
+			if ($user[USER_LOGIN] != $passdw)
 				return (0);
 			return $user;
 		}

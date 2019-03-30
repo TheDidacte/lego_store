@@ -1,4 +1,8 @@
 <?php
+	include_once ("./tools/auth.php");
+	include_once ("./tools/user.php");
+	include_once ("../const.php");
+
 	/*
 	Return Value:
 		FALSE => internal Error
@@ -7,23 +11,20 @@
 	*/
 	function logIn($passwd_file)
 	{
-		include ("./tools/auth.php");
-		include ("./tools/user.php");
-
-		if ($_POST[login] == "" || $_POST[passwd] == "")
+		if ($_POST[USER_LOGIN] == "" || $_POST[USER_PASSWORD] == "")
 			return FALSE;
 
 		if (session_start() == FALSE)
 			return FALSE;
 
-		if (($user = auth($_POST[login], $_POST[passwd], $passwd_file)) === FALSE)
+		if (($user = auth($_POST[USER_LOGIN], $_POST[USER_PASSWORD], $passwd_file)) === FALSE)
 			return (1);
 		else
 		{
-			$_SESSION[user] = array();
+			$_SESSION[USER] = array();
 			foreach ($user as $key => $value)
-				$_SESSION[user][$key] = $value;
-			foreach ($_SESSION[user] as $key => $value)
+				$_SESSION[USER][$key] = $value;
+			foreach ($_SESSION[USER] as $key => $value)
 				echo $key.": ".$value."<br>";
 			return (2);
 		}
