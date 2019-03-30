@@ -3,8 +3,9 @@
 	$userdb_path = "./Datas/users.db";
 	$articledb_path = "./Datas/articles.db";
 
-	include_once("./tools/hash.php");
 	include_once("./tools/const.php");
+	include_once("./tools/hash.php");
+	include_once("./tools/db.php");
 
 	/* Creating database Dir */
 	function init_db($dir_path)
@@ -56,7 +57,21 @@
 		return (TRUE);
 	}
 
+	function init_server_db($userdb_path, $articledb_path)
+	{
+		if (($userdb = db_get($userdb_path)) === FALSE)
+			echo "Can't load users database".PHP_EOL;
+		else
+			$_SERVER[USER] = $userdb;
+
+		if (($articledb = db_get($articledb_path)) === FALSE)
+			echo "Can't load articles database".PHP_EOL;
+		else
+			$_SERVER[ARTICLE] = $articledb;
+	}
+
 	init_db($db_path);
 	init_user_db($userdb_path);
 	init_article_databe($articledb_path);
+	init_server_db($userdb_path, $articledb_path);
 ?>
