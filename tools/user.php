@@ -1,5 +1,5 @@
 <?php
-	include_once("./const.php");
+	include_once("const.php");
 	/*
 		user_get:
 			False => Internal Error

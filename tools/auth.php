@@ -1,6 +1,6 @@
 <?php
-	include_once("./const.php");
-	include_once("./hash.php");
+	include_once("const.php");
+	include_once("hash.php");
 
 	function auth($login, $passwd, $passwd_file)
 	{

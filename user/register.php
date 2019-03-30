@@ -2,6 +2,7 @@
 	include_once("../tools/db.php");
 	include_once("../tools/hash.php");
 	include_once("../tools/const.php");
+
 	/*
 		register:
 			FALSE: Internal Error
@@ -12,17 +13,21 @@
 	{
 		$passwd_file = "../Datas/users.db";
 
+		// echo "register 0".PHP_EOL;
 		/* Checking arguments */
 		if ($_POST[login] == "" || $_POST[passwd] == "")
 			return FALSE;
 
+		// echo "register 1".PHP_EOL;
 		if (($serial_tab = db_get($passwd_file)) == FALSE)
 			return FALSE;
 
+		// echo "register 2".PHP_EOL;
 		foreach($serial_tab as $user)
 			if ($user[login] === $_POST[login])
 				return (1);
 
+		// echo "register 3".PHP_EOL;
 		$new_user = array();
 		$new_user[USER_ID] = $serial_tab[count($serial_tab ) - 1][user_id] + 1;
 		$new_user[USER_LOGIN] = $_POST[USER_LOGIN];
@@ -50,7 +55,14 @@
 			echo "Can't log in";
 	}
 	else if ($res === 1)
-		echo "User name already exist".PHP_EOL;
+	{
+		include_once("login.php");
+
+		if (logIn($passwd_file) == 2)
+			echo "Logged in";
+		else
+			echo "User name already exist".PHP_EOL;
+	}
 	else
 		echo "Unknown error occured";
 ?>

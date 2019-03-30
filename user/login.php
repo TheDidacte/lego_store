@@ -24,9 +24,20 @@
 			$_SESSION[USER] = array();
 			foreach ($user as $key => $value)
 				$_SESSION[USER][$key] = $value;
-			foreach ($_SESSION[USER] as $key => $value)
-				echo $key.": ".$value."<br>";
 			return (2);
 		}
 	}
+/*
+	$res = logIn("../Datas/users.db");
+	$_POST[USER_LOGIN] = "jmartel";
+	$_POST[USER_PASSWORD] = "okalm";
+	if ($res === FALSE)
+		echo "Internal error".PHP_EOL;
+	else if ($res == 1)
+		echo "Invalid password".PHP_EOL;
+	else if ($res == 2)
+		echo "Logged in".PHP_EOL;
+	else
+		echo "Unknown error".PHP_EOL;
+*/
 ?>

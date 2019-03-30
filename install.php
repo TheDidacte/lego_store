@@ -1,4 +1,5 @@
 <?php
+	$db_path = "./Datas";
 	$userdb_path = "./Datas/users.db";
 	$user_tools_path = "./tools/";
 
@@ -19,7 +20,19 @@
 		$serial_tab = array();
 		$serial_tab[] = $new_user;
 		$str = serialize($serial_tab);
-		file_put_contents($userdb_path, $str);
+		if (file_put_contents($userdb_path, $str) == FALSE)
+			return FALSE;
+		return (TRUE);
 	}
+
+	/* Creating database Dir */
+	function init_db($dir_path)
+	{
+		if (!file_exists($dir_path))
+			if (mkdir($dir_path, 0777, TRUE) == FALSE)
+				return FALSE;
+		return TRUE;
+	}
+	init_db($db_path);
 	init_user_db($userdb_path);
 ?>
