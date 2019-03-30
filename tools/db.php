@@ -17,7 +17,7 @@
 		if (($serial_tab = db_get($filepath)) === FALSE)
 			return FALSE;
 		foreach ($serial_tab as $elem)
-			if ($value[$looked_key] == $looked_value)
+			if ($elem[$looked_key] == $looked_value)
 				return $value;
 		return FALSE;
 	}
@@ -30,8 +30,8 @@
 			return FALSE;
 		$res = array();
 		foreach ($serial_tab as $elem)
-			if ($value[$looked_key] == $looked_value)
-				$res[] = $value;
+			if ($elem[$looked_key] == $looked_value)
+				$res[] = $elem;
 		return $res;
 	}
 
