@@ -14,14 +14,14 @@
 	function db_save($serial_tab, $filepath)
 	{
 		$str = serialize($serial_tab);
-		if (file_put_contents($filepath, $str) == FALSE)
+		if (file_put_contents($filepath, $str) === FALSE)
 			return FALSE;
 		return TRUE;
 	}
 
 	function db_add($user, $filepath)
 	{
-		if (($serial_tab = db_get($filepath)) == FALSE)
+		if (($serial_tab = db_get($filepath)) === FALSE)
 			return FALSE;
 		$serial_tab[] = $user;
 		return db_save($serial_tab, $filepath);

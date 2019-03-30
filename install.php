@@ -1,10 +1,19 @@
 <?php
 	$db_path = "./Datas";
 	$userdb_path = "./Datas/users.db";
-	$user_tools_path = "./tools/";
+	$articledb_path = "./Datas/articles.db";
 
-	include_once($user_tools_path."hash.php");
+	include_once("./tools/hash.php");
 	include_once("./tools/const.php");
+
+	/* Creating database Dir */
+	function init_db($dir_path)
+	{
+		if (!file_exists($dir_path))
+			if (mkdir($dir_path, 0777, TRUE) == FALSE)
+				return FALSE;
+		return TRUE;
+	}
 
 	/* Creating User database */
 	function init_user_db($userdb_path)
@@ -25,14 +34,29 @@
 		return (TRUE);
 	}
 
-	/* Creating database Dir */
-	function init_db($dir_path)
+	/* Creating Article database*/
+	function init_article_databe($articledb_path)
 	{
-		if (!file_exists($dir_path))
-			if (mkdir($dir_path, 0777, TRUE) == FALSE)
-				return FALSE;
-		return TRUE;
+		$db = array();
+		$article = array();
+		$article[ARTICLE_ID] = 0;
+		$article[ARTICLE_NAME] = "Blue 4x2 Brick";
+		$article[ARTICLE_PRICE] = 12.30;
+		$article[ARTICLE_PREVIEW] = array("001.png");
+		$article[ARTICLE_DESCRIPTION] = "Blue two by four Lego brick";
+		$article[ARTICLE_CATEGORIE] = ARTICLE_CATEGORIE_BRICK;
+		$article[ARTICLE_COLOR] = ARTICLE_COLOR_BLUE;
+		$article[ARTICLE_SELLERID] = 0;
+		$article[ARTICLE_ADDTIME] = 0;
+
+		$db[] = $article;
+		$str = serialize($db);
+		if (file_put_contents($articledb_path, $str) == FALSE)
+			return FALSE;
+		return (TRUE);
 	}
+
 	init_db($db_path);
 	init_user_db($userdb_path);
+	init_article_databe($articledb_path);
 ?>
