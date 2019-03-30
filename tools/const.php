@@ -2,6 +2,7 @@
 	/* User database keys and values*/
 	define(USER, "user");
 	define(USER_ID, "user_id");
+		define(USER_ID_NOT_LOGGED, -1);
 	define(USER_LOGIN, "login");
 	define(USER_PASSWORD, "passwd");
 	define(USER_FNAME, "fname");
