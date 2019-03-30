@@ -1,5 +1,8 @@
 <?php
-	include_once("../tools/include.php");
+
+	include_once("../tools/const.php");
+	include_once("../tools/db.php");
+	include_once("../tools/init_page.php");
 
 	initPage();
 
