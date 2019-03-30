@@ -61,7 +61,7 @@ if (isset($_GET['id']))
 	{
 		if (intval($e[ARTICLE_ID]) === intval($_GET['id']))
 		{
-			echo getArticleElement($e);
+			echo getArticleElement($e, "../");
 			//echo '<div class="article_show">This is article N'.$_GET['id'].'</div>';
 		}
 	}
@@ -83,7 +83,7 @@ else if (isset($_GET['category']))
 					echo '<div class="showcase">';
 					$hasFound = TRUE;
 				}	
-				echo getArticleElement($e);
+				echo getArticleElement($e, "../");
 			}
 		}
 	}
