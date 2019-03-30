@@ -3,8 +3,8 @@
 include_once("tools/const.php");
 include_once("tools/db.php");
 include_once("tools/init_page.php");
+include_once("articles/get_article_element.php");
 initPage("");
-print_r($db);
 ?>
 <html><body>
 
@@ -34,13 +34,10 @@ else
 <?php
 
 
-//include_once('articles/get_article_element.php');
 
 
-foreach ($db[USER] as $k => $e)
-	echo "$k => $e\n";
-foreach ($db[ARTICLE] as $k => $e)
-	echo "$k => $e\n";
+foreach ($db[ARTICLE] as $e)
+	echo getArticleElement($e);
  
 //echo getArticleElement($a);
 ?>
