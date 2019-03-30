@@ -1,5 +1,5 @@
 <?php
-	include_once("/tools/include.php");
+	include_once("../tools/include.php");
 
 	initPage();
 

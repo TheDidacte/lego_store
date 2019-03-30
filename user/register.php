@@ -1,7 +1,7 @@
 <?php
-	include_once("/tools/db.php");
-	include_once("/tools/hash.php");
-	include_once("/tools/const.php");
+	include_once("../tools/db.php");
+	include_once("../tools/hash.php");
+	include_once("../tools/const.php");
 
 	/*
 		register:
@@ -11,7 +11,7 @@
 	*/
 	function register()
 	{
-		$passwd_file = "/Datas/users.db";
+		$passwd_file = "../Datas/users.db";
 
 		// echo "register 0".PHP_EOL;
 		/* Checking arguments */
@@ -40,7 +40,7 @@
 		return db_add($new_user, $passwd_file);
 	}
 
-	$passwd_file = "/Datas/users.db";
+	$passwd_file = "../Datas/users.db";
 
 	$res = register();
 	if ($res === FALSE)
@@ -48,7 +48,7 @@
 	else if ($res === TRUE)
 	{
 		echo "Registration OK".PHP_EOL;
-		include_once("/user/login.php");
+		include_once("../user/login.php");
 		if (logIn($passwd_file) === 2)
 			echo "Successfully logged in".PHP_EOL;
 		else

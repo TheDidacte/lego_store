@@ -29,6 +29,15 @@
 		$new_user[USER_TYPE] = 2;
 		$serial_tab = array();
 		$serial_tab[] = $new_user;
+		$new_user = array();
+		$new_user[USER_ID] = 1;
+		$new_user[USER_LOGIN] = "cpoirier";
+		$new_user[USER_FNAME] = "Corentin";
+		$new_user[USER_LNAME] = "Poirier";
+		$new_user[USER_PASSWORD] = my_hash("tata");
+		$new_user[USER_MAIL] = "cpoirier@student.42.fr";
+		$new_user[USER_TYPE] = 2;
+		$serial_tab[] = $new_user;
 		$str = serialize($serial_tab);
 		if (file_put_contents($userdb_path, $str) == FALSE)
 			return FALSE;

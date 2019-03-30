@@ -2,11 +2,9 @@
 
 session_start();
 
-include_once("/tools/db.php");
-
 $db = [];
 
-function initPage()
+function initPage($path)
 {
 	if (!isset($_SESSION[USER]))
 	{
@@ -22,12 +20,11 @@ function initPage()
 	// Verif DB
 	global $db;
 
-	$db[ARTICLE] = db_get("/Datas/articles.db");
-	$db[USER] = db_get("/Datas/users.db");
+	$db[ARTICLE] = db_get($path . "Datas/articles.db");
+	$db[USER] = db_get($path . "Datas/users.db");
 	
 	if ($db[ARTICLE] === FALSE || $db[USER] === FALSE)
 		header("Location: /error/500.html");
-	
 }
 
 ?>

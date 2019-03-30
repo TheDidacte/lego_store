@@ -1,9 +1,9 @@
 <?php
 	session_start();
 
-	include_once ("/tools/auth.php");
-	include_once ("/tools/user.php");
-	include_once ("/tools/const.php");
+	include_once ("../tools/const.php");
+	include_once ("../tools/hash.php");
+	include_once ("../tools/auth.php");
 
 	/*
 	Return Value:
@@ -27,13 +27,16 @@
 		}
 	}
 
-	$res = logIn("/Datas/users.db");
+	$res = logIn("../Datas/users.db");
 	if ($res === FALSE)
 		echo "Internal error".PHP_EOL;
 	else if ($res == 1)
 		echo "Invalid password".PHP_EOL;
 	else if ($res == 2)
+	{
 		echo "Logged in".PHP_EOL;
+		header("Location: /");
+	}
 	else
 		echo "Unknown error".PHP_EOL;
 

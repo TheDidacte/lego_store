@@ -1,8 +1,9 @@
 <?php
 
-include_once("/tools/const.php");
-include_once("/tools/init_page.php");
-initPage();
+include_once("tools/const.php");
+include_once("tools/db.php");
+include_once("tools/init_page.php");
+initPage("");
 print_r($db);
 ?>
 <html><body>
@@ -12,11 +13,14 @@ print_r($db);
 <?php
 
 if ($_SESSION[USER][USER_ID] !== USER_ID_NOT_LOGGED)
-	echo "Welcome " . $_SESSION[USER][USER_LOGIN] . " !";
+{
+	echo "Welcome " . $_SESSION[USER][USER_LOGIN] . " !\n";
+	echo '<div id="logout"><a href="user/logout.php">Logout</a></div>' . "\n";
+}
 else
 {
 	echo '<div id="login"><a href="user/login.html">Login</a></div>' . "\n";
-	echo '<div id="register"><a href="user/regist.php">Register</a></div>' . "\n";
+	echo '<div id="register"><a href="user/register.html">Register</a></div>' . "\n";
 }
 
 ?>	
@@ -39,7 +43,6 @@ foreach ($db[ARTICLE] as $k => $e)
 	echo "$k => $e\n";
  
 //echo getArticleElement($a);
-
 ?>
 
 </div>

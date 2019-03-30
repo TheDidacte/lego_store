@@ -4,6 +4,7 @@
 	function logOut()
 	{
 		session_unset();
+		header("Location: /");
 	}
 	logOut();
 ?>
