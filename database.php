@@ -6,7 +6,7 @@
 	initPage("");
 	echo "<h1>Users DataBase</h1>";
 	foreach($db[USER] as $user)
-		echo "<p>".$user[USER_ID]." : ".$user[USER_LOGIN]."</p>";
+		echo "<p>id : ".$user[USER_ID].", login : ".$user[USER_LOGIN]."  permissions : ".$user[USER_TYPE]."</p>";
 
 	echo "<h1>Articles DataBase</h1>";
 	foreach($db[ARTICLE] as $user)

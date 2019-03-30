@@ -6,6 +6,7 @@
 - Changer le hash du password
 - Text en hover sur le index.php
 - Bouton Login / Register
+- Fusionner login.html et login.php pour permettre de revenir a la page forcant le login (admin/panel.php et passer commande ...)
 
 ! - Ajouter des categories !
 

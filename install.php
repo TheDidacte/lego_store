@@ -27,7 +27,7 @@ function init_user_db($userdb_path)
 	$new_user[USER_LNAME] = "Martel";
 	$new_user[USER_PASSWORD] = my_hash("okalm");
 	$new_user[USER_MAIL] = "jmartel@student.42.fr";
-	$new_user[USER_TYPE] = 2;
+	$new_user[USER_TYPE] = USER_TYPE_ADMIN;
 	$serial_tab = array();
 	$serial_tab[] = $new_user;
 	$new_user = array();
@@ -37,7 +37,7 @@ function init_user_db($userdb_path)
 	$new_user[USER_LNAME] = "Poirier";
 	$new_user[USER_PASSWORD] = my_hash("tata");
 	$new_user[USER_MAIL] = "cpoirier@student.42.fr";
-	$new_user[USER_TYPE] = 2;
+	$new_user[USER_TYPE] = USER_TYPE_ADMIN;
 	$serial_tab[] = $new_user;
 	$str = serialize($serial_tab);
 	if (file_put_contents($userdb_path, $str) === FALSE)
