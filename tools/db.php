@@ -51,4 +51,21 @@
 			return FALSE;
 		return TRUE;
 	}
+
+	function db_del_elem($filepath, $looked_key, $looked_value)
+	{
+		if (($serial_tab = db_get($filepath)) === FALSE)
+			return FALSE;
+		$i = 0;
+		foreach ($serial_tab as $elem)
+		{
+			if ($elem[$looked_key] == $looked_value)
+				break ;
+			$i++;
+		}
+		array_splice($serial_tab, $i, 1);
+		if (db_save($serial_tab, $filepath) === FALSE)
+			return FALSE;
+		return TRUE;
+	}
 ?>
