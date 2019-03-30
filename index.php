@@ -1,19 +1,18 @@
 <?php
 
-session_start();
-
 include_once("tools/const.php");
-
+include_once("tools/init_page.php");
+initPage();
+print_r($db);
 ?>
-
 <html><body>
 
 <div id="header">
 	<div id="main_title">Welcome to lego pieces store</div>
 <?php
 
-if (isset($_SESSION[USER][USER_ID]))
-	echo "Welcome " . $SESSION[USER][USER_LOGIN] . " !";
+if ($_SESSION[USER][USER_ID] !== USER_ID_NOT_LOGGED)
+	echo "Welcome " . $_SESSION[USER][USER_LOGIN] . " !";
 else
 {
 	echo '<div id="login"><a href="user/login.html">Login</a></div>' . "\n";
@@ -27,15 +26,20 @@ else
 
 <div id="showcase">
 
-<!-- Here, display some random items-->
-<!-- For this, iterate over $articles and call getArticleElement($article) to print -->
 
 <?php
 
-include_once('tools/get_article_element.php');
+
+//include_once('articles/get_article_element.php');
 
 
-echo getArticleElement($a);
+foreach ($db[USER] as $k => $e)
+	echo "$k => $e\n";
+foreach ($db[ARTICLE] as $k => $e)
+	echo "$k => $e\n";
+ 
+//echo getArticleElement($a);
+
 ?>
 
 </div>
