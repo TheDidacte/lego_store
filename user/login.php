@@ -1,4 +1,6 @@
 <?php
+	session_start();
+
 	include_once ("../tools/auth.php");
 	include_once ("../tools/user.php");
 	include_once ("../tools/const.php");
@@ -12,9 +14,6 @@
 	function logIn($passwd_file)
 	{
 		if ($_POST[USER_LOGIN] === "" || $_POST[USER_PASSWORD] === "")
-			return FALSE;
-
-		if (session_start() === FALSE)
 			return FALSE;
 
 		if (($user = auth($_POST[USER_LOGIN], $_POST[USER_PASSWORD], $passwd_file)) === FALSE)

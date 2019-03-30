@@ -56,11 +56,12 @@
 	}
 	else if ($res === 1)
 	{
+		/*
 		include_once("login.php");
 
 		if (logIn($passwd_file) == 2)
 			echo "Logged in";
-		else
+		else*/
 			echo "User name already exist".PHP_EOL;
 	}
 	else

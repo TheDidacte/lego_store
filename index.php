@@ -2,14 +2,25 @@
 
 session_start();
 
+include_once("tools/const.php");
+
 ?>
 
 <html><body>
 
 <div id="header">
 	<div id="main_title">Welcome to lego pieces store</div>
-	<div id="register">Register</div>
-	<div id="login">Login</div>
+<?php
+
+if (isset($_SESSION[USER][USER_ID]))
+	echo "Welcome " . $SESSION[USER][USER_LOGIN] . " !";
+else
+{
+	echo '<div id="login"><a href="user/login.html">Login</a></div>' . "\n";
+	echo '<div id="register"><a href="user/regist.php">Register</a></div>' . "\n";
+}
+
+?>	
 </div>
 
 <div id="hero_zone">Here you can find any piece you're missing</div>
@@ -21,10 +32,10 @@ session_start();
 
 <?php
 
-include('./user/tools/get_article_element.php');
+include_once('tools/get_article_element.php');
 
-$a = array("name" => "lego_brick", "price" => 2.35, "preview" => "http://icon-park.com/imagefiles/lego_brick_blue.png");
-getArticleElement($a);
+
+echo getArticleElement($a);
 ?>
 
 </div>
