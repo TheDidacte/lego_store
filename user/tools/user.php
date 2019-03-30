@@ -15,9 +15,9 @@
 			return (FALSE);
 		foreach($serial_tab as $user)
 		{
-			if ($user[login] != $login)
+			if ($user[$login] != $login)
 				continue ;
-			if ($user[passwd] != $passdw)
+			if ($user[$passwd] != $passdw)
 				return (0);
 			return $user;
 		}

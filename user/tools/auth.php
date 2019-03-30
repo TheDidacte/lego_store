@@ -10,9 +10,9 @@
 		/* Looking for current user*/
 		foreach ($serial_tab as $key => $value)
 		{
-			if ($value[login] === $login)
+			if ($value['login'] === $login)
 			{
-					if (hash("whirlpool", $passwd) === $value[passwd])
+					if (hash("whirlpool", $passwd) === $value['passwd'])
 						return $value;
 					return FALSE;
 			}
