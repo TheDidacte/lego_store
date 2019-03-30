@@ -11,6 +11,30 @@
 		return $serial_tab;
 	}
 
+	/* Look in a db file the element characterised by given a key => value */
+	function db_get_elem($filepath, $looked_key, $looked_value)
+	{
+		if (($serial_tab = db_get($filepath)) === FALSE)
+			return FALSE;
+		foreach ($serial_tab as $elem)
+			if ($value[$looked_key] == $looked_value)
+				return $value;
+		return FALSE;
+	}
+
+	/* Look in a db file for all elements matching a couple key => value */
+	/*	return an array, empty or filled with matching elements */
+	function db_get_elem_all($filepath, $looked_key, $looked_value)
+	{
+		if (($serial_tab = db_get($filepath)) === FALSE)
+			return FALSE;
+		$res = array();
+		foreach ($serial_tab as $elem)
+			if ($value[$looked_key] == $looked_value)
+				$res[] = $value;
+		return $res;
+	}
+
 	function db_save($serial_tab, $filepath, $db_name = "")
 	{
 		$str = serialize($serial_tab);
