@@ -32,6 +32,7 @@
 	define(ARTICLE_SELLER, "seller");
 	define(ARTICLE_ADDTIME, "addtime");
 	define(BASKET, "basket");
+	define(BASKET_QUANTITY, "basket_quantity");
 
 	define(CATEGORY, "category");
 	define(CATEGORY_ID, "category_id");

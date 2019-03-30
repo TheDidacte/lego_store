@@ -20,9 +20,11 @@
 			return (1);
 		else
 		{
+			$basket = $_SESSION[USER][BASKET];
 			$_SESSION[USER] = array();
 			foreach ($user as $key => $value)
-				$_SESSION[USER][$key] = $value;
+					$_SESSION[USER][$key] = $value;
+			$_SESSION[USER][BASKET] = $basket;
 			return (2);
 		}
 	}

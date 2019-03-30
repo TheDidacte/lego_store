@@ -5,6 +5,7 @@
 - Difference entre compte admin et vendeur
 - Changer le hash du password
 - Text en hover sur le index.php
+- Modifier le MDP
 - Bouton Login / Register
 - Fusionner login.html et login.php pour permettre de revenir a la page forcant le login (admin/panel.php et passer commande ...)
 

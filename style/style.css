@@ -119,14 +119,23 @@ body
 .add_to_basket
 {
 	position: relative;
-	right: -204px;
+	right: -67px;
+	border: none;
 	bottom: 50px;
+	font-size: 35px;
 	width: 50px;
 	border-radius: 0 7px 7px 0;
-	padding-top: 10px;
-	height: 40px;
+	height: 50px;
 	background-color: #565656;
 	color: white;
+	cursor: pointer;
+}
+#article_count
+{
+	font-family: Roboto;
+	font-size: 25px;
+	padding-top: 6px;
+	text-align: center;
 }
 #basket
 {

@@ -4,6 +4,7 @@ include_once("tools/const.php");
 include_once("tools/db.php");
 include_once("tools/init_page.php");
 include_once("articles/get_article_element.php");
+include_once("tools/index_helper.php");
 initPage("");
 ?>
 <html>
@@ -16,7 +17,11 @@ initPage("");
 
 <body>
 
-<div id="basket"><div id="basket_logo"></div></div>
+<div id="basket"><div id="basket_logo"><div id="article_count">
+<?php
+echo getTotalItems() . "\n";
+?>
+</div></div></div>
 
 <div id="header">
 	<div id="main_title">Welcome to lego pieces store !</div>
