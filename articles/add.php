@@ -1,5 +1,5 @@
 <?php
-	function article_add_manual($filepath, $name, $price, $preview, $description, $categorie, $color, $sellerid)
+	function article_add_manual($filepath, $name, $price, $preview, $description, $categorie, $sellerid)
 	{
 		if (($serial_tab = db_get($filepath)) === FALSE)
 		{
@@ -22,7 +22,6 @@
 		$article[ARTICLE_PREVIEW] = $preview;
 		$article[ARTICLE_DESCRIPTION] = $description;
 		$article[ARTICLE_CATEGORIE] = $categorie;
-		$article[ARTICLE_COLOR] = $color;
 		$article[ARTICLE_SELLERID] = $sellerid;
 		$article[ARTICLE_ADDTIME] = time();
 		$serial_tab[] = $article;
