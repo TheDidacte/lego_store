@@ -5,6 +5,7 @@
 - Difference entre compte admin et vendeur
 - Changer le hash du password
 - Text en hover sur le index.php
+- Bouton Login / Register
 
 ! - Ajouter des categories !
 
@@ -16,4 +17,7 @@ Admin:
 - les commandes (historique, etc)
 - modifier/ajouter articles
 - Supprimer articles du vendeur s'il se supprime
-- 
+- Users / Categories / Articles:
+	- Add
+	- Remove
+	- (Modify) 
