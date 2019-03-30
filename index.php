@@ -25,6 +25,7 @@ initPage("");
 if ($_SESSION[USER][USER_ID] !== USER_ID_NOT_LOGGED)
 {
 	echo "<div id='welcome'>Welcome " . $_SESSION[USER][USER_LOGIN] . " !</div>\n";
+	echo '<div id="see_profile"><a href="user/profile.php">Profile</a></div>' . "\n";
 	echo '<div id="logout"><a href="user/logout.php">Logout</a></div>' . "\n";
 }
 else

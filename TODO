@@ -3,11 +3,14 @@
 - Ne pas pouvoir supprimer les comptes admin
 - Ameliorer les images
 - Difference entre compte admin et vendeur
+- Changer le hash du password
+- Text en hover sur le index.php
 
 ! - Ajouter des categories !
 
 - Search
 - Panier
+- Ajouter le favicon
 
 Admin:
 - les commandes (historique, etc)

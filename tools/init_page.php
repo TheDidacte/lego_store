@@ -23,8 +23,9 @@ function initPage($path = "")
 
 	$db[ARTICLE] = db_get($path . "Datas/articles.db");
 	$db[USER] = db_get($path . "Datas/users.db");
+	$db[CATEGORY] = db_get($path . "Datas/category.db");
 	
-	if ($db[ARTICLE] === FALSE || $db[USER] === FALSE)
+	if ($db[ARTICLE] === FALSE || $db[USER] === FALSE || $db[CATEGORY] === FALSE)
 		header("Location: /error/500.html");
 }
 

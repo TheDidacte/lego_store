@@ -15,7 +15,7 @@ body
 	box-shadow: -1px -9px 20px 10px black;
 	z-index: 1;
 }
-#logout
+#logout, #see_profile
 {
 	background-color: red;
 	width: 120px;
@@ -26,6 +26,11 @@ body
 	right: 25px;
 	top: 8px;
 	padding-top: 4px;
+}
+#see_profile
+{
+	right: 160px !important;
+	background-color: green !important;
 }
 #index
 {
@@ -40,6 +45,11 @@ body
 	cursor: pointer;
 }
 #logout:hover
+{
+	box-shadow: 1px 1px black;
+	transform: translate(-1px, -1px);
+}
+#see_profile:hover
 {
 	box-shadow: 1px 1px black;
 	transform: translate(-1px, -1px);
@@ -189,6 +199,27 @@ body
 	top: -4px;
 	position: absolute;
 }
+#see_profile::after {
+	content: "";
+	background-color: green;
+	width: 20px;
+	height: 4px;
+	z-index: 1;
+	left: 18px;
+	top: -4px;
+	position: absolute;
+}
+#see_profile::before {
+	content: "";
+	background-color: green;
+	width: 20px;
+	height: 4px;
+	z-index: 1;
+	left: 85px;
+	top: -4px;
+	position: absolute;
+}
+
 
 #hero_zone
 {
@@ -223,7 +254,7 @@ body
 #welcome
 {
 	position: absolute;
-	right: 160px;
+	right: 300px;
 	font-size: 15px;
 	color: black;
 	top: 17px;

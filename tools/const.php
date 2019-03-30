@@ -21,11 +21,8 @@
 	define(ARTICLE_PREVIEW, "preview");
 	define(ARTICLE_DESCRIPTION, "description");
 	define(ARTICLE_CATEGORIE, "categorie");
-		define(ARTICLE_CATEGORIE_BRICK, "brick");
-		define(ARTICLE_CATEGORIE_BOARD, "board");
-		define(ARTICLE_CATEGORIE_HEAD, "head");
-		define(ARTICLE_CATEGORIE_BODY, "body");
-		define(ARTICLE_CATEGORIE_LEGS, "legs");
+		define(ARTICLE_CATEGORIE_BRICK, 0);
+		define(ARTICLE_CATEGORIE_CHARACTER, 1);
 	define(ARTICLE_COLOR, "color");
 		define(ARTICLE_COLOR_RED, "red");
 		define(ARTICLE_COLOR_BLUE, "blue");
@@ -36,5 +33,7 @@
 	define(ARTICLE_ADDTIME, "addtime");
 	define(BASKET, "basket");
 
-	define(USER_ID_NOT_LOGGED, -1);
+	define(CATEGORY, "category");
+	define(CATEGORY_ID, "category_id");
+	define(CATEGORY_NAME, "category_name");
 ?>
