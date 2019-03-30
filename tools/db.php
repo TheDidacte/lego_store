@@ -11,19 +11,25 @@
 		return $serial_tab;
 	}
 
-	function db_save($serial_tab, $filepath)
+	function db_save($serial_tab, $filepath, $db_name = "")
 	{
 		$str = serialize($serial_tab);
 		if (file_put_contents($filepath, $str) === FALSE)
 			return FALSE;
+		if ($db_name !== "")
+			$_SERVER[$db_name] = $serial_tab;
 		return TRUE;
 	}
 
-	function db_add($user, $filepath)
+	function db_add($user, $filepath, $db_name = "")
 	{
 		if (($serial_tab = db_get($filepath)) === FALSE)
 			return FALSE;
 		$serial_tab[] = $user;
-		return db_save($serial_tab, $filepath);
+		if (db_save($serial_tab, $filepath) === FALSE)
+			return FALSE;
+		if ($db_name !== "")
+			$_SERVER[$db_name] = $serial_tab;
+		return TRUE;
 	}
 ?>
