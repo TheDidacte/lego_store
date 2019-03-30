@@ -1,9 +1,9 @@
 <?php
 	session_start();
 
-	include_once ("../tools/auth.php");
-	include_once ("../tools/user.php");
-	include_once ("../tools/const.php");
+	include_once ("/tools/auth.php");
+	include_once ("/tools/user.php");
+	include_once ("/tools/const.php");
 
 	/*
 	Return Value:
@@ -26,10 +26,8 @@
 			return (2);
 		}
 	}
-/*
-	$res = logIn("../Datas/users.db");
-	$_POST[USER_LOGIN] = "jmartel";
-	$_POST[USER_PASSWORD] = "okalm";
+
+	$res = logIn("/Datas/users.db");
 	if ($res === FALSE)
 		echo "Internal error".PHP_EOL;
 	else if ($res == 1)
@@ -38,5 +36,5 @@
 		echo "Logged in".PHP_EOL;
 	else
 		echo "Unknown error".PHP_EOL;
-*/
+
 ?>

@@ -5,4 +5,5 @@
 	{
 		session_unset();
 	}
+	logOut();
 ?>

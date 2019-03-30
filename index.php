@@ -1,7 +1,7 @@
 <?php
 
-include_once("tools/const.php");
-include_once("tools/init_page.php");
+include_once("/tools/const.php");
+include_once("/tools/init_page.php");
 initPage();
 print_r($db);
 ?>
