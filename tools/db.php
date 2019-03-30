@@ -3,7 +3,6 @@
 	{
 		if (!file_exists($filepath))
 			return FALSE;
-
 		if (($str = file_get_contents($filepath)) === FALSE)
 			return FALSE;
 		if (($serial_tab = unserialize($str)) === FALSE)

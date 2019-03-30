@@ -34,4 +34,7 @@
 		define(ARTICLE_COLOR_WHITE, "white");
 	define(ARTICLE_SELLER, "seller");
 	define(ARTICLE_ADDTIME, "addtime");
+
+
+	define(USER_ID_NOT_LOGGED, -1);
 ?>
