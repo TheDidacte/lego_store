@@ -23,26 +23,43 @@ body
 	font-size: 20px;
 	height: 32px;
 	position: absolute;
-	right: 7px;
+	right: 25px;
 	top: 8px;
 	padding-top: 4px;
+}
+#index
+{
+	position: fixed;
+	z-index: 1;
+	width: 100px;
+	height: 100px;
+	border-radius: 100%;
+	background-color: red;
+	bottom: 10px;
+	right: 10px;
+	cursor: pointer;
 }
 #logout:hover
 {
 	box-shadow: 1px 1px black;
 	transform: translate(-1px, -1px);
 }
+.article_preview:hover img
+{
+	transform: scale(1.2);
+}
 .article_price
 {
 	margin-top: 17px !important;
-	background-color: #ff9696;
-	width: 120px;
-	height: 40px;
+	background-color: #ffffff;
+	width: 180px;
+	height: 37px;
 	cursor: pointer;
-	color: white;
+	color: black;
 	padding-top: 9px;
 	border-radius: 7px;
 	margin: auto;
+	border: 2px solid #565656;
 }
 .article_hold
 {
@@ -53,9 +70,13 @@ body
 {
 	display: flex;
 	width: 80vw;
-	margin: 10vw auto;
+	margin: 1vw auto;
 	flex-direction: row;
 	flex-wrap: wrap;
+}
+.article_container:hover
+{
+	box-shadow: 2px 1px 20px #00000059;
 }
 .article_container
 {
@@ -67,6 +88,8 @@ body
 	font-family: Roboto;
 	font-size: 25px;
 	padding-top: 17px;
+	cursor: pointer;
+	transition: box-shadow 0.1s ease-out 0s;
 }
 .article_title
 {
@@ -76,17 +99,75 @@ body
 {
 	max-width: 200px;
 	max-height: 200px;
+	transition: transform 0.2s ease-out 0s;
 }
 #invisible
 {
 	width: 42px;
 	height: 50px;
 }
+.add_to_basket
+{
+	position: relative;
+	right: -204px;
+	bottom: 50px;
+	width: 50px;
+	border-radius: 0 7px 7px 0;
+	padding-top: 10px;
+	height: 40px;
+	background-color: #565656;
+	color: white;
+}
+#basket
+{
+	position: fixed;
+	width: 100px;
+	height: 100px;
+	background-color: red;
+	bottom: 10px;
+	right: 10px;
+	border-radius: 100%;
+	cursor: pointer;
+}
+#basket_logo
+{
+	width: 40px;
+	height: 40px;
+	background-color: white;
+	margin: 30px 0 0 30px;
+}
+.article_container:hover .article_preview
+{
+	box-shadow: inset 0px 0px 51px 0px #00000004;
+}
 .article_preview
 {
 	padding-top: 70px;
 	height: 200px;
 	box-shadow: inset 0px 0px 51px 0px #0000001f;
+	transition: box-shadow 0.1s ease-out 0s;
+}
+#basket_logo::before
+{
+	content: "";
+	background-color: white;
+	width: 12px;
+	height: 4px;
+	z-index: 1;
+	left: 34px;
+	top: 26px;
+	position: absolute;
+}
+#basket_logo::after
+{
+	content: "";
+	background-color: white;
+	width: 12px;
+	height: 4px;
+	z-index: 1;
+	left: 54px;
+	top: 26px;
+	position: absolute;
 }
 #logout::after {
 	content: "";
@@ -142,10 +223,21 @@ body
 #welcome
 {
 	position: absolute;
-	right: 140px;
+	right: 160px;
 	font-size: 15px;
 	color: black;
 	top: 17px;
+}
+.separator
+{
+	font-family: Roboto;
+	color: #060606;
+	font-size: 30px;
+	background-color: yellow;
+	width: 208px;
+	height: 65px;
+	padding: 28px 0 0 24px;
+	margin: 4vw 12vw;
 }
 #main_title
 {

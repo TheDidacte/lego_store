@@ -16,6 +16,8 @@ initPage("");
 
 <body>
 
+<div id="basket"><div id="basket_logo"></div></div>
+
 <div id="header">
 	<div id="main_title">Welcome to lego pieces store !</div>
 <?php
@@ -47,7 +49,7 @@ else
 
 
 
-for ($k = 0; $k < 1000; $k++)
+for ($k = 0; $k < 10; $k++)
 foreach ($db[ARTICLE] as $e)
 	echo getArticleElement($e);
  

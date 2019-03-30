@@ -53,7 +53,7 @@
 		$article[ARTICLE_ID] = 0;
 		$article[ARTICLE_NAME] = "Blue 4x2 Brick";
 		$article[ARTICLE_PRICE] = 12.30;
-		$article[ARTICLE_PREVIEW] = array("001-1.png");
+		$article[ARTICLE_PREVIEW] = array("Gallery/001-1.png");
 		$article[ARTICLE_DESCRIPTION] = "Blue two by four Lego brick";
 		$article[ARTICLE_CATEGORIE] = ARTICLE_CATEGORIE_BRICK;
 		$article[ARTICLE_COLOR] = ARTICLE_COLOR_BLUE;

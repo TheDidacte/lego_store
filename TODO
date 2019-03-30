@@ -1,0 +1,16 @@
+- Proteger les inputs (injection SQL dans champs utilisateurs + $_GET + register et login)
+- Mise en forme du prix
+- Ne pas pouvoir supprimer les comptes admin
+- Ameliorer les images
+- Difference entre compte admin et vendeur
+
+! - Ajouter des categories !
+
+- Search
+- Panier
+
+Admin:
+- les commandes (historique, etc)
+- modifier/ajouter articles
+- Supprimer articles du vendeur s'il se supprime
+- 

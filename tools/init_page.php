@@ -15,6 +15,7 @@ function initPage($path = "")
 		$_SESSION[USER][USER_LNAME] = "";
 		$_SESSION[USER][USER_MAIL] = "";
 		$_SESSION[USER][USER_TYPE] = USER_TYPE_CLIENT;
+		$_SESSION[USER][BASKET] = array();
 	}
 
 	// Verif DB
