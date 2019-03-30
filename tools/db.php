@@ -39,8 +39,6 @@
 		$str = serialize($serial_tab);
 		if (file_put_contents($filepath, $str) === FALSE)
 			return FALSE;
-		if ($db_name !== "")
-			$_SERVER[$db_name] = $serial_tab;
 		return TRUE;
 	}
 
@@ -51,8 +49,6 @@
 		$serial_tab[] = $user;
 		if (db_save($serial_tab, $filepath) === FALSE)
 			return FALSE;
-		if ($db_name !== "")
-			$_SERVER[$db_name] = $serial_tab;
 		return TRUE;
 	}
 ?>

@@ -4,7 +4,7 @@ session_start();
 
 $db = [];
 
-function initPage($path)
+function initPage($path = "")
 {
 	if (!isset($_SESSION[USER]))
 	{
