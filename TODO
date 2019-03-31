@@ -22,4 +22,8 @@ Admin:
 - Users / Categories / Articles:
 	- Add
 	- Remove
-	- (Modify) 
+	- (Modify)
+	 
+- Protecting admin users
+- Deleting your session => logout
+

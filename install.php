@@ -53,7 +53,7 @@ function init_article_databe($articledb_path)
 	$article[ARTICLE_ID] = 0;
 	$article[ARTICLE_NAME] = "Blue 4x2 Brick";
 	$article[ARTICLE_PRICE] = 42.0;
-	$article[ARTICLE_PREVIEW] = array("Gallery/001-1.png");
+	$article[ARTICLE_PREVIEW] = array("/Gallery/001-1.png");
 	$article[ARTICLE_DESCRIPTION] = "Blue two by four Lego brick";
 	$article[ARTICLE_CATEGORIE] = array("Brick", "Blue");
 	$article[ARTICLE_SELLERID] = 0;
