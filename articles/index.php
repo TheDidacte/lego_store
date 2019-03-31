@@ -44,26 +44,52 @@ else
 
 <?php
 
+function getCategoryName($i)
+{
+	global $db;
+	foreach ($db[CATEGORY] as $e)
+	{
+		if (intval($e[CATEGORY_ID]) === intval($i))
+			return ($e[CATEGORY_NAME]);
+	}return FALSE;
+}
+
+$hasFound = FALSE;
 if (isset($_GET['id']))
 {
 	foreach($db[ARTICLE] as $e)
 	{
 		if (intval($e[ARTICLE_ID]) === intval($_GET['id']))
 		{
-			echo '<div class="article_show">This is article N'.$_GET['id'].'</div>';
+			echo getArticleElement($e, "../");
+			//echo '<div class="article_show">This is article N'.$_GET['id'].'</div>';
 		}
 	}
 }
 else if (isset($_GET['category']))
 {
+	$name = getCategoryName($_GET['category']);
 	foreach($db[ARTICLE] as $e)
 	{
-		if (intval($e[ARTICLE_CATEGORIE]) === intval($_GET['category']))
+		foreach($e[ARTICLE_CATEGORIE] as $cat)
 		{
-			echo '<div class="article_show">This is article N'.$e[ARTICLE_ID].'</div>';
+			if ($cat === $name)
+			{
+				if (!$hasFound)
+				{
+					echo '<div class="separator">Results for category "';
+					echo $name;
+					echo '":</div>';
+					echo '<div class="showcase">';
+					$hasFound = TRUE;
+				}	
+				echo getArticleElement($e, "../");
+			}
 		}
 	}
 }
+if ($hasFound)
+	echo '</div>';
 
 ?>
 

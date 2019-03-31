@@ -57,9 +57,8 @@ else
 
 for ($k = 0; $k < 10; $k++)
 foreach ($db[ARTICLE] as $e)
-	echo getArticleElement($e);
+	echo getArticleElement($e, "");
  
-//echo getArticleElement($a);
 ?>
 
 </div>

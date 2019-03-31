@@ -71,8 +71,8 @@ function fill_article_database($articledb_path)
 	$filepath = "Datas/articles.db";
 	article_add_manual($filepath, "Red 4x2 Brick", 39.90, array("/Gallery/002-1.png"), "Red two by four Lego brick",    array("Brick", "Red"), 0);
 	article_add_manual($filepath, "Green 4x2 Brick", 42.0, array("/Gallery/003-1.png"), "Green two by four Lego brick", array("Brick", "Green") , 0);
-	article_add_manual($filepath, "Black 4x2 Brick", 42.0, array("/Gallery/004-1.png"), "Black two by four Lego brick", array("Brick", "Black") , 0);
-	article_add_manual($filepath, "White 4x2 Brick", 42.0, array("/Gallery/005-1.png"), "White two by four Lego brick", array("Brick", "White") , 0);
+	article_add_manual($filepath, "Black 4x2 Brick", 42.0, array("/Gallery/005-1.png"), "Black two by four Lego brick", array("Brick", "Black") , 0);
+	article_add_manual($filepath, "White 4x2 Brick", 42.0, array("/Gallery/004-1.png"), "White two by four Lego brick", array("Brick", "White") , 0);
 	article_add_manual($filepath, "Blue ninjago character", 1.50, array("/Gallery/006-1.png"), "Original Lego Ninjago Character",  array("Character", "Blue"), 1);
 	article_add_manual($filepath, "Red ninjago character", 1.39, array("/Gallery/007-1.jpg"),  "Original Lego Ninjago Character",  array("Character", "Red"), 1);
 	article_add_manual($filepath, "Green ninjago character", 1.50, array("/Gallery/008-1.jpg"),"Original Lego Ninjago Character",  array("Character", "Green"), 1);
